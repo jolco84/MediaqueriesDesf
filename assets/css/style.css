@@ -1,0 +1,204 @@
+/*Inicio areas grid*/
+.nav-area{
+    grid-area: nav-area;
+    background-color: blue;
+    color: white;
+    
+}
+.filtros {
+    grid-area: filtros;
+    background-color: rgb(171, 168, 168);
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    padding: 10px 0px 10px 0px;
+    
+}
+
+.principal{
+    grid-area: principal;
+    grid-template-rows: 1fr;     
+    margin: 10px ;   
+    padding: 5px;
+}
+.pie{
+    padding: 5px 0px 0px 0px;
+    grid-area: pie;
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+/*FIN areas grid*/
+/* grid principal*/
+.grid-store{
+    display: grid;
+    grid-template-areas: 
+    "nav-area"
+    "filtros"
+    "principal"
+    "pie";
+    
+}
+/* flex seccion header*/
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px;
+}
+.header p{
+    margin: 10px;
+}
+.header i{
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.titulo{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    padding: 10%;
+    text-align: center;
+    list-style: none;
+    color: white;    
+    display: none;
+    
+}
+ul li {
+    padding: 5px;
+}
+/* flex seccion filtros*/
+.filtros select{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 50%;
+}
+.filtros p {
+    margin-bottom: 0px;
+}
+/* flex seccion principal*/
+.principal-flex{
+    border: 1px solid rgb(171, 168, 168);
+    border-radius: 5px;
+    border-style: groove;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+.principal .paginas{
+    margin: 0px 16px;
+}
+.pagination{
+    margin: 0px 16px;
+}
+.principal-flex button{
+    background-color: blue;
+    color: white;
+    width: 80px;
+    margin: 10px;
+    border-radius: 10px ;
+    border-color: blue;
+}
+
+.items{
+    display: grid;
+}
+
+.pies{
+    font-weight: bold;
+ }
+
+/**Inicio Layouts**/
+/*Version tablet*/
+@media (min-width: 576px){
+    .grid-store{
+        grid-template-areas: 
+        "nav-area nav-area"
+        "filtros principal"      
+        "pie principal";
+        grid-template-columns: 2fr 7fr;
+        
+        
+    }
+    
+    .principal .items{
+        grid-template-columns: 1fr 1fr ;
+    }
+
+    .principal-flex{
+        margin: 10px;
+    }
+
+    .menu {
+        padding: 10px;
+        margin: 10px;
+        list-style: none;
+        color: white;    
+        display: flex;
+        
+        
+    }
+    .header{
+        flex-direction: row;
+    }
+    .header .fa-align-justify {
+        display: none;
+    }
+    
+    .filtros{
+        align-content:flex-start ;
+
+    }
+    .filtros select {
+        width: 80%;
+    }
+
+}
+/*Version escritorio*/
+@media (min-width: 992px){ 
+    .grid-store{
+        grid-template-areas: 
+        "nav-area filtros"
+        "nav-area principal"      
+        "pie principal";
+        grid-template-columns: 1fr 7fr;
+        
+    }
+
+    .principal .items{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .principal-flex{
+        margin: 10px;
+    }
+
+    .menu {
+        padding: 10px;
+        list-style: none;
+        color: white;    
+        display: list-item;
+        
+    }
+    .header{
+        flex-direction: column;
+    }
+    .header .fa-align-justify {
+        display: none;
+    }
+    
+    .filtros select {
+        width: 80%;
+    }
+    .titulo{
+        font-size: larger;
+    }
+}
